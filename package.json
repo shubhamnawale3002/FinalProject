@@ -6,7 +6,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "lite-server"
   },
-  "type": "module",
   "author": "Shashidhar Gurumurthy @ Intelliswift",
   "license": "MIT",
   "dependencies": {

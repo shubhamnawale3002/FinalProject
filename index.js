@@ -1,14 +1,21 @@
 "use strict"
-import { companies } from './data/data.js'
-console.log('In index.js updated - testing again - removed small change');
-document.getElementById('output').innerHTML = 'Number of companies: ' + companies.length;
+let data
 
-console.log(companies.length);
+import('./src/moviesPlay.js')
+	.then(res => {
+		console.log('data imported into data constant');
+		data = res;
+	});
+
 function inputChanged(event) {
-    document.getElementById('output').innerHTML = event.target.value;
+	document.getElementById('output').innerHTML = event.target.value;
 }
 
 function onSubmit(event) {
-    event.preventDefault();
-    console.log('Form Submitted');
+	event.preventDefault();
+	console.log('Form Submitted'); 
+}
+
+function showCounts() {
+	console.log(data.getCounts());
 }
