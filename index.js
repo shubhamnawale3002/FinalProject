@@ -1,43 +1,57 @@
-const mySet = new Set();
-mySet.add(1);
-mySet.add(2);
-mySet.add(3);
-mySet.add(1);
+let data
 
-console.log('Number of items in mySet: ' + mySet.size);
+import('../src/moviesPlay.js')
+	.then(res => {
+		console.log('data imported into data constant');
+		data = res;
+		run();
+	});
 
-const myMap = new Map();
+function run() {
+	const filteredMovies = data.movies.filter(movie => {
+    return movie.runtimeMinutes > 150;
+  })
+  const totalRuntime = filteredMovies.reduce((acc, movie) => {
+    console.log(movie.runtimeMinutes);
+    return acc + movie.runtimeMinutes;
+  }, 0)
+  console.log('Total Runtime: ' + totalRuntime + ', avg runtime: ' + Math.ceil(totalRuntime / filteredMovies.length));
 
-myMap.set(1, 'One');
-myMap.set(2, 'Two');
-myMap.set(3, 'Three');
-myMap.set(1, 'Ek');
-console.log('Number of items in myMap: ' + myMap.size);
-
-//Simple iteration of keys and get value using get
-for (const key of myMap.keys()) {
-	console.log(key, myMap.get(key));
+  //Reformat the filtered output
+  const output = filteredMovies.map(movie => {
+    return {
+      title: movie.title, 
+      releaseDate: movie.releaseDate, 
+      runtimeMinutes: movie.runtimeMinutes,
+      id: movie.tmdbId
+    } 
+  })
+  console.log(output);
 }
 
-//Iteration of both key and value
-//In each execution of the loop, JS returns an array of 2 elements - key & value
-for (const [key, value] of myMap) {
-	console.log(key, value);
+function getMovieInformation() {
+  const apiKey = 'ee7d203471e97a298538cbe020b53f27';
+  const movieUrl = 'https://api.themoviedb.org/3/movie/';
+  const movieId = '98'
+  const imageUrl = 'https://image.tmdb.org/t/p/original';
+
+  const fetchUrl = `${movieUrl}${movieId}?api_key=${apiKey}`;
+  console.log('Calling fetch');
+  const startTime = Date.now();
+  let endTime;
+  fetch(fetchUrl)
+    .then(response => {
+      endTime = Date.now();
+      console.log('>>>> Got Response. Time taken: ' + (endTime - startTime) + ' milliseconds');
+      return response.json()
+    })
+    .then(movie => {
+      //console.log(movie);
+      console.log(movie.backdrop_path, movie.poster_path);
+      const htmlContent = `<img src='${imageUrl}${movie.poster_path}' />`
+      document.getElementById('content').innerHTML = htmlContent;
+    })
+    .catch(console.error)
+  endTime = Date.now();
+  console.log('Finished calling fetch. Time taken: ' + (endTime - startTime) + ' milliseconds');
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
