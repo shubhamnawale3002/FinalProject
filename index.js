@@ -30,7 +30,7 @@ function run() {
 }
 
 function getMovieInformation() {
-  const apiKey = 'ee7d203471e97a298538cbe020b53f27';
+  const apiKey = '<Your API Key Here>';
   const movieUrl = 'https://api.themoviedb.org/3/movie/';
   const movieId = '98'
   const imageUrl = 'https://image.tmdb.org/t/p/original';
