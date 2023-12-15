@@ -1,4 +1,8 @@
 let data
+const personUrl = 'https://api.themoviedb.org/3/person/'
+const apiKey = 'e284050e0ccfefbcc46609f394f1ca3a';
+const movieUrl = 'https://api.themoviedb.org/3/movie/';
+const imageUrl = 'https://image.tmdb.org/t/p/original';
 
 import('../src/moviesPlay.js')
 	.then(res => {
@@ -6,13 +10,14 @@ import('../src/moviesPlay.js')
 		data = res;
 		run();
 	});
+  
+
 
 function run() {
 	const filteredMovies = data.movies.filter(movie => {
     return movie.runtimeMinutes > 150;
   })
   const totalRuntime = filteredMovies.reduce((acc, movie) => {
-    console.log(movie.runtimeMinutes);
     return acc + movie.runtimeMinutes;
   }, 0)
   console.log('Total Runtime: ' + totalRuntime + ', avg runtime: ' + Math.ceil(totalRuntime / filteredMovies.length));
@@ -30,10 +35,7 @@ function run() {
 }
 
 function getMovieInformation() {
-  const apiKey = 'ee7d203471e97a298538cbe020b53f27';
-  const movieUrl = 'https://api.themoviedb.org/3/movie/';
   const movieId = '98'
-  const imageUrl = 'https://image.tmdb.org/t/p/original';
 
   const fetchUrl = `${movieUrl}${movieId}?api_key=${apiKey}`;
   console.log('Calling fetch');
@@ -48,7 +50,9 @@ function getMovieInformation() {
     .then(movie => {
       //console.log(movie);
       console.log(movie.backdrop_path, movie.poster_path);
-      const htmlContent = `<img src='${imageUrl}${movie.poster_path}' />`
+      const htmlContent = `<a href='./movie.html?id=${movie.id}&poster=${movie.poster_path}'>
+      <img src='${imageUrl}${movie.poster_path}' />
+      </a>`
       document.getElementById('content').innerHTML = htmlContent;
     })
     .catch(console.error)
