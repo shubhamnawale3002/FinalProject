@@ -1,6 +1,6 @@
 let data
 const personUrl = 'https://api.themoviedb.org/3/person/'
-const apiKey = 'e284050e0ccfefbcc46609f394f1ca3a';
+const apiKey = '2b2c07716c090a6ec70b65afb7237320';
 const movieUrl = 'https://api.themoviedb.org/3/movie/';
 const imageUrl = 'https://image.tmdb.org/t/p/original';
 let movieIds;

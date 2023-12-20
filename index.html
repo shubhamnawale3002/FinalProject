@@ -10,14 +10,22 @@
   <body>
     <div class="ui container">
       <div id="content">
-        <label for="movies">Select a movie:</label>
         <select name="movies" id="movies" 
           class="ui compact selection dropdown"
           onchange="movieSelected()"
           >
-          <option value="111">Scarface</option>
-          <option value="95">Armageddon</option>
+          <option value=''>Select a Movie</option>
         </select>
+        <hr/>
+        <h1 id="title"></h1>
+        <div id="overview"></div>
+        <hr/>
+        <div class="ui grid">
+          <div class="four wide column" id="moviePoster">
+          </div>
+          <div class="twelve wide column" id="castInfo">
+          </div>
+        </div>
       </div>
     </div>
   </body>
