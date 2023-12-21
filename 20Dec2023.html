@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Learning is Fun</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon-img.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css">
+    <script src="./src/20Dec2023.js"></script>
+  </head>
+  <body>
+    <div class="ui container">
+      <div id="content">
+        <select name="movies" id="movies" 
+          class="ui compact selection dropdown"
+          onchange="movieSelected()"
+          >
+          <option value=''>Select a Movie</option>
+        </select>
+        <hr/>
+        <h1 id="title"></h1>
+        <div id="overview"></div>
+        <hr/>
+        <div class="ui grid">
+          <div class="four wide column" id="moviePoster">
+          </div>
+          <div class="twelve wide column" id="castInfo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
