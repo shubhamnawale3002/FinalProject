@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #22254b;
+    --secondary-color: #f6f6f6;
+}
+header nav {
+    position: relative;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between; /* Updated to flex-end */
+    
+}
+
+#searchInput {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    color: #423c3c;
+    font-family: inherit;
+    margin-left: 10px; /* Added margin-left to create space */
+}
+
+#searchInput:focus{
+    outline:0;
+    background-color: #ffffff;
+}
+
+#searchInput::placeholder{
+    color: #c2c2cb;
+}
+#logo {
+    max-width: 100px;
+    max-height: 40px;
+}
+main{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.rectangle {
+    width: 300px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    margin: 50px auto;
+    border: 1px solid #ccc;
+}
+/* Centered and scrollable popup styles */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+}
+
+.popup {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 50%;
+    width: 50%;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+#modal_header, #modal_footer {
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+.close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        .popup-open {
+            overflow: hidden;
+        }
