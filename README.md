@@ -1,4 +1,5 @@
 **MoviesWiki Web App**
+
 Welcome to MoviesWiki.com! This repository serves as the base environment for the MoviesWiki web app. The MoviesWiki web app provides an interactive platform for users to browse and filter movies. It includes features such as language filtering, genre filtering, and decade-based filtering. The setup includes a starter HTML page, a JavaScript file, and sample JSON data to facilitate your development process. We've integrated a lightweight web server, lite-server, and a user-friendly CSS library, Semantic UI, to enhance your experience.
 
 **Setup**
