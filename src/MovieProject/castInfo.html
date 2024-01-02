@@ -6,6 +6,12 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css">
     <script src="./castInfo.js"></script>
+    <script>
+        function redirectToMoviePage() {
+            // Redirect to the desired movie.html page
+            window.location.href = 'http://127.0.0.1:5501/src/MovieProject/index.html';
+        }
+    </script>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -57,13 +63,23 @@
            
             color: #000000; /* Light text color */
         }
+        header nav {
+            position: relative;
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between; /* Updated to flex-end */
+            
+        }
     </style>
-    <!-- <div class="head">
-        <img id="logo" src="movies.jpg" alt="Intelliswift Logo" >
-    </div> -->
 </head>
 <body>
- 
+    <header>
+    <nav>
+        <div class="head">
+            <img id="logo" src="movie.jpg" alt="Intelliswift Logo" onclick="redirectToMoviePage()">
+        </div>
+    </nav>
+</header>
     <h1 id="title"></h1>
     <div id="overview" style="padding: 20px;"></div>
    

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Learning is Fun</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon-img.png">
-    <link rel="stylesheet" href="./src/MovieProject/movie.css">
+    <link rel="stylesheet" href="./movie.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
@@ -13,7 +13,7 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('./src/MovieProject/screen1_Background.jpg'); /* Replace with your image file path */
+            background-image: url('screen1_Background.jpg'); /* Replace with your image file path */
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -22,11 +22,11 @@
     </style>
 </head>
 <body>
-    <script src="./src/MovieProject/movie.js"></script>
+    <script src="./movie.js"></script>
     <header>
         <nav>
             <div class="head">
-                <img id="logo" src="./src/MovieProject/movie.jpg" alt="Intelliswift Logo">
+                <img id="logo" src="movie.jpg" alt="Intelliswift Logo">
             </div>
             <h1 style="text-align: center;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MoviesWiki.com</h1>
             <div class="search_user">
@@ -84,10 +84,10 @@
             }
         });   
         document.getElementById("overlay").addEventListener("click", function (event) {
-          if (event.target === this) {
-              hidePopup();
-          }
-      });     
+            if (event.target === this) {
+                hidePopup();
+            }
+        });     
     </script>
 </body>
 </html>
